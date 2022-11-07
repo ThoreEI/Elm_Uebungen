@@ -83,10 +83,10 @@ prev : Date -> Date
 prev (d,m,y) =
       if d > 1 then
         (d-1, m, y)
-      else if m < 12 then
+      else if m > 1 then
         (getDaysOfMonth(m-1)(y),(m-1),y)
       else
-        (1,1,y+1)
+        (getDaysOfMonth(12)(y-1),(12),y-1)
 
 leapyear : Year -> Bool
 leapyear currentYear = modBy currentYear 4 == 0 && modBy currentYear 100 /= 0 || modBy currentYear 400 == 0

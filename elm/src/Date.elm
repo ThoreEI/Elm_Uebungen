@@ -89,7 +89,7 @@ prev (d,m,y) =
         (getDaysOfMonth(12)(y-1),(12),y-1)
 
 leapyear : Year -> Bool
-leapyear currentYear = modBy currentYear 4 == 0 && modBy currentYear 100 /= 0 || modBy currentYear 400 == 0
+leapyear currentYear = modBy 4 currentYear == 0 && modBy 100 currentYear /= 0 || modBy 400 currentYear == 0
 
 sub : Date -> Date -> Day
 sub date1 date2 =

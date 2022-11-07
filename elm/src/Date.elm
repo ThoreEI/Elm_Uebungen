@@ -104,7 +104,7 @@ monthsToDays: Month -> Year -> Day
 monthsToDays currentMonth currentYear =
               List.sum (List.map(\thisMonth -> getDaysOfMonth thisMonth currentYear)(List.range 1 (currentMonth-1)))
 
-result = String.fromInt (sub (1,1,1)(1,1,1000))
+result = String.fromInt (sub (1,1,1)(31,12,1))
 
 main =
   Html.text result

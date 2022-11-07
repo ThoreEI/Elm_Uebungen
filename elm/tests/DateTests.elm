@@ -80,3 +80,20 @@ prev =
         Expect.equal
           (31,12,1999) (Date.prev(1,1,2000))
       )
+
+
+leapyear : Test
+leapyear =
+    test "check if it's a leapyear or not"
+      (\_ ->
+        Expect.equal
+          (True) (Date.leapyear 1200)
+      )
+
+sub : Test
+sub =
+    test "check if the period of time (in days) between two dates is correct"
+      (\_ ->
+        Expect.equal
+          (-364) (Date.sub(1,1,1)(31,12,1))
+      )
